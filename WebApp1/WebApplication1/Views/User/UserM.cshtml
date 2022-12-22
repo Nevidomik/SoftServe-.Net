@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.Tasks>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Your To Do List</h1>
+</div>
+
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr  id="head">
+      <th class="col-md-2">Task</th>
+      <th class="col-md-5">Description</th>
+      <th class="col-md-2">StartTime</th>
+      <th class="col-md-2">EndTime</th>
+      <th class="col-md-1">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var i in Model)
+        {
+                 <tr id="todo-@i.Priority">
+              <td scope="row" >@i.Name</td>
+              <td> @i.Description</td>
+              <td>@i.StartTime.ToString("yyyy.MM.dd")</td>
+                  <td>@i.EndTime.ToString("yyyy.MM.dd")</td>
+                  <td><div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select
+      </button>
+      <ul class="dropdown-menu">
+            <li><a asp-controller="User" asp-action="Delete" asp-route-id="@i.Id" class="dropdown-item">Delete</a></li>
+            <li><a asp-controller="User" asp-action="Ready" asp-route-id="@i.Id" class="dropdown-item">Ready</a></li>
+      </ul>
+    </div></td>
+             </tr>
+
+        }
+  </tbody>
+</table>               
+    
+<a asp-controller="User" asp-action="NewTask" type="button" class="btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+</svg></a>

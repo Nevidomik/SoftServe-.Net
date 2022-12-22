@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Tasks;
+
+<form class="row g-3" asp-action="Create" method="post">
+  <div class="col-md-6">
+    <label for="inputName" class="form-label">Name</label>
+    <input asp-for="Name" type="text" class="form-control" id="inputName">
+  </div>
+  <div class="col-md-2">
+    <label for="inputState" class="form-label">Priority</label>
+    <select asp-for="Priority" id="inputState" class="form-select">
+      <option selected>one</option>
+      <option>two</option>
+      <option>three</option>
+      <option>four</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputStart" class="form-label">Start</label>
+    <input asp-for="StartTime" type="date" class="form-control" id="inputStart">
+  </div>
+  <div class="col-md-2">
+    <label for="inputEnd" class="form-label">End</label>
+    <input asp-for="EndTime" type="date" class="form-control" id="inputEnd">
+  </div>
+  <div class="form-floating">
+  <textarea asp-for="Description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2">Comments</label>
+</div>
+
+  <div class="col-11">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+    <div class="col-md-1">
+    <label for="inputState" class="form-label"></label>
+    <select asp-for="Status" id="inputState" class="form-select">
+      <option>Ready</option>
+      <option selected>Not ready</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.Tasks>
+
+<table class="table table-bordered table-hover" id="tb-2">
+  <thead>
+    <tr  id="head">
+            <th class="col-md-2">Task @if (!(Model is null)) Model.Count();</th>
+            <th class="col-md-4">Description</th>
+      <th class="col-md-3">StartTime</th>
+      <th class="col-md-3">EndTime</th>
+    </tr>
+  </thead>
+  <tbody>
+        @{
+            if (!(Model is null)) {
+foreach (var i in Model)
+        {
+                     <tr id="todo-@i.Priority">
+                  <td scope="row">@i.Name</td>
+                  <td> @i.Description</td>
+                  <td>@i.StartTime.ToString("yyyy.MM.dd")</td>
+                      <td>@i.EndTime.ToString("yyyy.MM.dd")</td>
+                      
+                 </tr>
+
+}
+            }
+}
+  </tbody>
+</table>         
+<div class="row">
+   <div class="col-md-3">
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+    <ul class="dropdown-menu">
+            <li><a asp-controller="User" asp-action="SortStatus" asp-route-id="Ready" class="dropdown-item">Ready</a></li>
+            <li><a asp-controller="User" asp-action="SortStatus" asp-route-id="Not ready" class="dropdown-item">Not ready</a></li>
+      </ul>
+      </div>
+  </div>
+      <div class="col-md-2">
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Priority
+  </button>
+    <ul class="dropdown-menu">
+            <li><a asp-controller="User" asp-action="SortPriority" asp-route-id="one" class="dropdown-item">one</a></li>
+            <li><a asp-controller="User" asp-action="SortPriority" asp-route-id="two" class="dropdown-item">two</a></li>
+             <li><a asp-controller="User" asp-action="SortPriority" asp-route-id="three" class="dropdown-item">three</a></li>
+              <li><a asp-controller="User" asp-action="SortPriority" asp-route-id="four" class="dropdown-item">four</a></li>
+      </ul>
+      </div>
+  </div>
+  </div>
+  <style>
+  </style>
