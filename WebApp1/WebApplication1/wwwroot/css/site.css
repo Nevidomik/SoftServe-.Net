@@ -1,0 +1,62 @@
+html {
+    font-size: 14px;
+    background-image: url("D:/C#/pexels-lumn-316466");
+    background-color: antiquewhite;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        background-color: antiquewhite;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: antiquewhite;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: antiquewhite;
+}
+
+#todo-{
+    background-color: grey
+}
+
+#yep {
+    border: 1px solid darkgreen
+}
+#head {
+    color: white;
+    background-color: #140013;
+    
+}
+#d {
+    border: 3px solid black;
+}
+#todo-one {
+    background-color: #D1E7DD;
+}
+#todo-two {
+    background-color: #CFE2FF;
+}
+#todo-three {
+    background-color: #FFF3CD;
+}
+#todo-four {
+    background-color: #F8D7DA;
+}
+#tb-2{
+    margin-top: 5px
+}
+
+#header {
+    background-color: red;
+}
+
+.background-image {
+    
+}
